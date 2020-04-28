@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<context:annotation-config/>
+	<bean id="service" class="com.cg.iter.service.studentServiceImpl">
+	</bean>
+	<bean id="studDao" class="com.cg.iter.dao.StudentDaoImpl">
+	</bean>
+	<bean id="stud" class="com.cg.iter.bean.Student">
+		<constructor-arg name ="id" value = "1232" />
+		<constructor-arg name ="name" value = "Kane" />
+		<constructor-arg name ="mobile" value = "876456374" />
+		<constructor-arg name ="subject" value = "Maths" />
+<!-- 		<constructor-arg name="address" ref="addr" /> -->
+	</bean>
+	<bean id="address" class="com.cg.iter.bean.Address">
+		<property name="houseNo" value="245"/>
+		<property name="houseName" value="Ashirvad"/>
+		<property name="city" value="Kolkata"/>
+	</bean>
+	<bean id="addr" class="com.cg.iter.bean.Address">
+		<property name="houseNo" value="205"/>
+		<property name="houseName" value="Mannath"/>
+		<property name="city" value="Bhubaneshwar"/>
+	</bean>
+	<bean id="stud1" class="com.cg.iter.bean.Student">
+		<property name ="id" value = "1234" />
+		<property name ="name" value = "Ashish" />
+		<property name ="mobile" value = "7978149596" />
+		<property name ="subject" value = "English" />
+	</bean>
+</beans>
